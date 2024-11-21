@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (centroSalud(); as centroSaludRef) {
+      <div>
+        <h2 data-cy="centroSaludDetailsHeading"><span jhiTranslate="actividadApp.centroSalud.detail.title">Centro Salud</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ centroSaludRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="actividadApp.centroSalud.nombre">Nombre</span></dt>
+          <dd>
+            <span>{{ centroSaludRef.nombre }}</span>
+          </dd>
+          <dt><span jhiTranslate="actividadApp.centroSalud.tipocentro">Tipocentro</span></dt>
+          <dd>
+            <span>{{ centroSaludRef.tipocentro }}</span>
+          </dd>
+          <dt><span jhiTranslate="actividadApp.centroSalud.direccion">Direccion</span></dt>
+          <dd>
+            <span>{{ centroSaludRef.direccion }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Volver</span>
+        </button>
+
+        <button type="button" [routerLink]="['/centro-salud', centroSaludRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

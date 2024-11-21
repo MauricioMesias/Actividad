@@ -1,0 +1,42 @@
+{
+  "annotations": {
+    "changelogDate": "20241121183934"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "fechaHora",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "motivo",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Reserva",
+  "relationships": [
+    {
+      "otherEntityName": "paciente",
+      "otherEntityRelationshipName": "reserva",
+      "relationshipName": "paciente",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "medico",
+      "otherEntityRelationshipName": "reserva",
+      "relationshipName": "medico",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "centroSalud",
+      "otherEntityRelationshipName": "reserva",
+      "relationshipName": "centroSalud",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

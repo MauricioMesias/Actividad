@@ -1,0 +1,33 @@
+entity Paciente {
+    rut String required,
+    nombre String required,
+    aPaterno String required,
+	aMaterno String,
+    fechaNacimiento LocalDate,
+}
+
+entity Medico {
+    rut String required,
+    nombre String required,
+	aPaterno String required,
+	aMaterno String,
+    especialidad String
+}
+
+entity CentroSalud {
+    nombre String required,
+	tipocentro String required,
+    direccion String required
+}
+
+entity Reserva {
+    fechaHora ZonedDateTime required,
+    motivo String
+}
+
+relationship ManyToOne {
+    Reserva to Paciente
+    Reserva to Medico
+    Reserva to CentroSalud
+}
+
